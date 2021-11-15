@@ -1,16 +1,42 @@
-# This is a sample Python script.
+#!/user/bin/env/python
+# -*- coding: utf-8 -*-
+import importlib
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from TK_1 import num_in_list
+from TK_2 import list_in_tuple_min_max
+from TK_3 import list_div_on_avg
+from TK_4 import list_multi_on_avg
+tk5 = importlib.import_module('TK-5')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    data = []
+    t_data = ()
+    data_2 = []
+
+    count = int(input('Enter size of array: '))
+    if count <= 0:
+        print('ERROR')
+        return 1
+
+    data = num_in_list(count)
+    print(data)
+
+    t_data = list_in_tuple_min_max(data)
+    print('Tuple : ' + str(t_data))
+
+    data_2 = list_div_on_avg(data)
+    print('List divided by avg : ' + str(data_2))
+
+    data_2 = list_multi_on_avg(data)
+    print('List multiplied by avg : ' + str(data_2))
+
+    data_2 = tk5.list_sqrt(data)
+    print('List with sqrt  : ' + str(data_2))
+
+    return 0
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sys.exit(main())

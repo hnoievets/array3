@@ -10,4 +10,4 @@ def list_sqrt(data_list):
         return sqrt_list
 
     else:
-        return 0
+        return -1
